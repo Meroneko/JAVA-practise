@@ -1,0 +1,53 @@
+<script>
+export default {
+  data() {
+    return {
+      count: 0,
+      countmm: 0,
+      countgg: 0,
+      random: null,
+      colorcat: 'cat',
+      colorfrog: 'frog'
+      
+    }
+  },
+  methods: {
+    increment() {
+      this.count++
+      this.random = 0 + Math.round( Math.random());
+      							if (this.random == 0){
+                      this.countmm++;
+                    }else {
+                      this.countgg++;
+                    }
+    },
+    randomGen() {
+                    random = 0 + Math.round( Math.random());
+      							if (random = 0){
+                      countmm++;
+                    }else {
+                      countgg++;
+                    }
+                }
+  }
+}
+
+</script>
+
+<template>
+  <!-- make this button work -->
+  <button @click="increment">按下这个按钮随机打瓜瓜一下或者猫猫一下，总共已经打了 {{ count }} 下。</button>
+  <p :class='colorfrog'>瓜瓜被打的次数：{{countgg}}  </p>
+  <p :class='colorcat'>猫猫被打的次数：{{countmm}}  </p>
+
+</template>
+
+<style>
+.frog {
+  color: green;
+}
+.cat {
+  color: blue;
+} 
+  
+</style>
